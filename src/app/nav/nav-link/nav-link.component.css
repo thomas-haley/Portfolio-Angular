@@ -1,7 +1,9 @@
 .active{
-    background-color: var(--accent-color-alt);
+    background-color: var(--primary-color-alt);
     border-radius: 8px;
 }
+
+
 
 .nav-link-anchor
 {
@@ -32,17 +34,3 @@
     color: var(--primary-font-color);
 }
 
-
-
-.nav-link-active
-{
-    position: relative;
-    bottom: 10px;
-    left: 0px;
-    
-    height: 10px;
-    width: 100%;
-    z-index: 20;
-    background-color: var(--accent-color);
-    border-radius: 8px 8px 0px 0px;
-}

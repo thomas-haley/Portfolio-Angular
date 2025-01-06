@@ -1,0 +1,9 @@
+.coming-soon-cont
+{
+    z-index: 10;
+    background-color: var(--primary-color-alt);
+    /* background-color: red; */
+    margin: 3rem;
+    text-align: center;
+    padding: 0rem 4rem;
+}

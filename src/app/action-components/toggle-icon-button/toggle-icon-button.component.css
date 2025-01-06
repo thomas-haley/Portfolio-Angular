@@ -7,7 +7,6 @@
     
     
     
-    background-color: var(--accent-color);
     cursor: pointer;
 }
 
@@ -15,7 +14,7 @@
 
 .toggle-icon-icon-cont{
     /* background-color: rgb(179, 179, 179); */
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     width: 90%;
     height: 90%;
     border-radius: 360px;
