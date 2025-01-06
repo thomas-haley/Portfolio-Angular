@@ -1,0 +1,53 @@
+
+.media-card-container
+{
+    display: flex !important;
+    background-color: var(--accent-color-alt-trans);
+    position: relative;
+    margin: 2rem 0px;
+    z-index: 1;
+    justify-content: space-between;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px var(--primary-color-alt);
+}
+
+.title-container
+{
+    padding: 0px 1em;
+    margin: .5em 0px;
+    background-color: var(--accent-color-alt);
+    display: flex;
+    border-radius: 1em;
+    width: fit-content;
+}
+
+
+.description-container
+{
+    padding: 0px 1em;
+    margin: 1em 0px;
+    background-color: var(--accent-color-alt);
+    display: flex;
+    border-radius: 1em;
+    width: auto;
+}
+
+
+
+.media-center
+{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.media-container
+{
+    width: 15%;
+    min-width: 16rem;
+}
+
+.content-container
+{
+    width: 85%;
+}

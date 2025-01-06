@@ -1,0 +1,9 @@
+.l-d-cont{
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+
+.l-d-cont div{
+    margin-left: 15px;
+}

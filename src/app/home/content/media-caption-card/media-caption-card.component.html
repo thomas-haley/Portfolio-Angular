@@ -1,0 +1,39 @@
+<div class="media-card-container {{!mediaLeft ? 'mobile-flex-start' : ''}}" >
+
+    @if(this.cardData.mediaLeft)
+    {
+        <div class="media-container media-center">
+            @if(this.cardData.media)
+            {
+                <!-- Handle static media -->
+                <app-static-media [mediaPath]="this.cardData.media"></app-static-media>
+            } @else { 
+                <!-- Handle media url -->
+            }
+        </div>
+    }
+
+    <div class="content-container p-8">
+        <div class="media-card-text-container">
+            <div class="title-container {{!mediaLeft ? 'just-end' : ''}}" >
+                <h1>{{this.cardData.title!}}</h1>
+            </div>
+            <div class="description-container">
+                <p>{{this.cardData.description}}</p>
+            </div>
+        </div>
+    </div>
+
+    @if(!this.cardData.mediaLeft)
+    {
+        <div class="media-container media-center">
+            @if(this.cardData.media)
+            {
+                <!-- Handle static media -->
+                <app-static-media [mediaPath]="this.cardData.media"></app-static-media>
+            } @else { 
+                <!-- Handle media url -->
+            }
+        </div>
+    }
+</div>

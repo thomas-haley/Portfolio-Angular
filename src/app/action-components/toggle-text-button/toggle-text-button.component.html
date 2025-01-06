@@ -1,0 +1,12 @@
+<div class="toggle-text-cont shape-{{this.shape}}" (click)="toggleSelector($event)">
+    <div class="toggle-text-text-cont {{toggled ? 'dis-none' : ''}}">
+        @if(textOne != null){
+            <p>{{textOne}}</p>
+        }
+    </div>
+    <div class="toggle-text-text-cont {{toggled ? '' : 'dis-none'}}">
+        @if(textTwo != null){
+            <p>{{textTwo}}</p>
+        }
+    </div>
+</div>

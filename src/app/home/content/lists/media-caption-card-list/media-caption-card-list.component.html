@@ -1,0 +1,13 @@
+@if(this.config() != null)
+{
+
+    @for(card of this.config()!['content_containers'][listTag]; track $index)
+    {
+        @if(card.visible)
+        {
+            <app-media-caption-card [cardData]="card"></app-media-caption-card>
+        }
+    }
+
+    
+}

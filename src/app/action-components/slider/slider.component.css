@@ -1,0 +1,22 @@
+.slider-container{
+    border-radius: 60px;
+    border: solid var(--accent-color) 2px;
+    width: calc(var(--component-slider-width) * (var(--component-slider-scale-factor) + 1) + 4px);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider-selector{
+    background-color: var(--primary-color);
+    margin:2px;
+    width: var(--component-slider-width);
+    height: var(--component-slider-width);
+    border-radius: 360px;
+    transition: transform 200ms;
+    pointer-events: none;
+}
+
+.slider-selector.selected{
+    transform: translateX(calc(var(--component-slider-width) * var(--component-slider-scale-factor)));
+
+}

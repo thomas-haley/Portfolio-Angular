@@ -1,0 +1,12 @@
+<div class="toggle-icon-cont shape-{{this.shape}}" (click)="toggleSelector($event)">
+    <div class="toggle-icon-icon-cont noclick {{toggled ? 'dis-none' : ''}}">
+        @if(iconOne != null){
+            <i class="noclick toggle-icon-icon s-100 bi {{iconOne}} "></i>
+        }
+    </div>
+    <div class="toggle-icon-icon-cont noclick {{toggled ? '' : 'dis-none'}}">
+        @if(iconTwo != null){
+            <i class="noclick toggle-icon-icon s-100 bi {{iconTwo}}"></i>
+        }
+    </div>
+</div>

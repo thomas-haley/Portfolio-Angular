@@ -1,0 +1,227 @@
+/* You can add global styles to this file, and also import other style files */
+@import "bootstrap-icons/font/bootstrap-icons.css";
+:root{
+    --glass-transparancy-factor: .7;
+    --primary-background: rgb(163, 163, 189);
+    --primary-color: #43466c;
+    --primary-color-alt: #c7c8d3;
+    --accent-color:#637671;
+    --accent-color-alt:rgb(208, 214, 212);
+    --accent-color-alt-trans:rgba(208, 214, 212, var(--glass-transparancy-factor));
+    --warning-color:#fd3d3d;
+    --warning-color-alt:#fec5c5;
+    --primary-font-color: rgb(0, 0, 0);
+    --component-slider-width: 1vw;
+    --component-slider-scale-factor: 2;
+    --tray-width-factor: 50vw;
+    --tray-slide-rate: .3s;
+    font-family: Verdana; 
+}
+
+[data-theme="dark"]{
+    --primary-background: rgb(17, 17, 43);
+    --primary-font-color: white;
+    --primary-color-alt: #2c2f4f;
+    --accent-color-alt:rgb(71, 89, 84);
+    --accent-color-alt-trans:rgba(71, 89, 84, var(--glass-transparancy-factor));
+    --warning-color-alt:#fc2727;
+}
+
+.primary-bg
+{
+    background-color: var(--primary-background);
+}
+.primary-color-bg
+{
+    background-color: var(--primary-color);
+}
+.primary-alt-color-bg
+{
+    background-color: var(--primary-color-alt);
+}
+.accent-color-bg
+{
+    background-color: var(--accent-color);
+}
+.accent-color-alt-bg
+{
+    background-color: var(--accent-color-alt);
+}
+
+.button-padding
+{
+    padding: .5em;
+}
+
+.button-margin
+{
+    margin: .5em;
+}
+
+.mx-1
+{
+    margin: 0rem 1em;
+}
+
+.flex
+{
+    display: flex;
+}
+
+.button
+{
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 720px){
+    :root{
+        --component-slider-width: 3vw;
+        --component-slider-scale-factor: 1.5;
+    }
+
+    .center-content
+    {
+        width: 100% !important;
+    }
+
+    .side-panel
+    {
+        display: none;
+    }
+
+    app-light-dark-selector
+    {
+        display: none;
+    }
+
+    .media-card-container
+    {
+        flex-direction: column;
+    }
+    .mobile-flex-start
+    {
+        flex-direction: column-reverse !important;
+    }
+
+    .media-container{
+        
+        width: 100% !important;
+        margin-top: 1rem;
+        /* margin-bottom: 1rem; */
+    }
+
+    .content-container{
+        width: 95% !important;
+        align-items: center !important;
+    }
+
+    .media-card-text-container
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 721px){
+    :root{
+        --component-slider-width: 2vw;
+        --component-slider-scale-factor: 1.5;
+    }
+}
+
+
+
+body{
+    background-color: var(--primary-background);
+    color: var(--primary-font-color);
+    margin: 0px;
+}
+
+.noclick{
+    pointer-events: none;
+}
+
+.dis-none
+{
+    display: none !important;
+}
+
+.w-25
+{
+    /* height: 100%;
+    aspect-ratio: 1;
+    width: auto; */
+    /* width: max-content; */
+    width: 25%;
+    /* width: 25%; */
+}
+
+.w-10
+{
+    width: 10%;
+}
+
+.w-15
+{
+    width: 15%;
+}
+.w-50
+{
+    width: 50%;
+}
+.w-70
+{
+    width: 70%;
+}
+
+.w-80
+{
+    width: 80%;
+}
+
+.w-90{
+    width: 90%;
+}
+
+
+.shape-circle{
+    border-radius: 360px;
+}
+
+.shape-square-rounded{
+    border-radius: 8px;
+}
+
+
+.p-8
+{
+    padding: 8px;
+}
+
+.just-end
+{
+    justify-self: end;
+}
+
+.side-panel{
+    overflow: hidden;
+}
+
+.screen-overlay
+{
+    position: fixed;
+    display: flex;
+    pointer-events: none !important;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    transition: all var(--tray-slide-rate) ease-out;
+}
+
+.screen-overlay-active{
+    background-color: rgba(0, 0, 0, .5);
+    /* pointer-events: inherit !important; */
+}
