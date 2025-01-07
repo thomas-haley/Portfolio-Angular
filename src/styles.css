@@ -41,7 +41,7 @@ app-contact-me, app-home{
     }
 
     .nav-link-active{
-        background-color: var(--primary-color-alt);
+        background-color: var(--primary-color);
         border-radius: 8px;
     }
 
