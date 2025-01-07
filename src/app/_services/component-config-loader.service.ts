@@ -14,4 +14,5 @@ export class ComponentConfigLoaderService {
   {
     return this.http.get<ComponentConfig>(this.configBasePath + configFile)
   }
+
 }

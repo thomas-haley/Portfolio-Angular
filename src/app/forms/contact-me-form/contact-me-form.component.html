@@ -1,0 +1,50 @@
+<div id="contact-me-form-container">
+    <div class="contact-form-container contact-form-row" id="name-row">
+
+        <label for="name">Name:</label>
+        <input [formControl]="nameControl" class="form-control fill-space input-form-field" id="name" required placeholder="Name">
+
+    </div>
+    <div>
+        <app-form-hint-row class="hint-row-container {{(nameControl.dirty && !nameControl.errors) || supressHints || !nameControl.errors  ? '' : 'show-hint'}}">Please enter your name</app-form-hint-row>
+    </div>
+    <div class="contact-form-container contact-form-row" id="email-row">
+        <label for="email">Email:</label>
+        <div class="spacer"></div>
+        <input [formControl]="emailControl" class="form-control input-form-field" id="email" required placeholder="Email">
+    </div>
+    <div>
+        <app-form-hint-row class="hint-row-container {{(emailControl.dirty && !emailControl.errors) || supressHints || !emailControl.errors  ? '' : 'show-hint'}}">Please enter a valid email</app-form-hint-row>
+    </div>
+    <div class="contact-form-container contact-form-row" id="inquiry-type-row" >
+        <label for="inquiry-type">Inquiry Type:</label>
+        <div class="spacer"></div>
+        <select [formControl]="typeControl" class="form-control input-form-field" id="inquiry-type-select" required>
+            <option value="general">
+                General Inquiry
+            </option>
+            <option value="site-feedback">
+                Site Feedback
+            </option>
+        </select>
+    </div>
+    <div>
+        <app-form-hint-row class="hint-row-container {{(typeControl.dirty && !typeControl.errors) || supressHints || !typeControl.errors  ? '' : 'show-hint'}}">Please select and inquiry type</app-form-hint-row>
+    </div>
+    <div class="contact-form-container" id="inquiry-content-row">
+        <div class="form-text-area-container">
+            <label for="inquiry-comments">Comment(s):</label>
+            <textarea [formControl]="commentControl" id="inquiry-comments" placeholder="Leave a comment"></textarea>
+        </div>
+    </div>
+    <div class="contact-form-container contact-form-row" id="submit-row">
+        <div class="spacer">
+
+        </div>
+        <div class="form-submit-button-cont">
+            <button (click)="submitContactMe()" class="form-submit-button">
+                Submit
+            </button>
+        </div>
+    </div>
+</div>

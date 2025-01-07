@@ -15,10 +15,13 @@
     --component-slider-scale-factor: 2;
     --tray-width-factor: 50vw;
     --tray-slide-rate: .3s;
+    --placeholder-text-color: rgb(83, 83, 83);
     font-family: Verdana; 
 }
 
-
+app-contact-me, app-home{
+    height: inherit;
+}
 .nav-link-active{
     background-color: var(--primary-background);
     border-radius: 8px;
@@ -31,7 +34,7 @@
     --accent-color-alt:rgb(71, 89, 84);
     --accent-color-alt-trans:rgba(71, 89, 84, var(--glass-transparancy-factor));
     --warning-color-alt:#fc2727;
-    
+    --placeholder-text-color: rgb(138, 138, 138);
     
     .coming-soon-cont{
         background-color: var(--primary-color);
@@ -44,6 +47,11 @@
 
     .nav-cont{
         background-color: var(--primary-color);
+    }
+    .form-submit-button{
+        background-color: var(--accent-color) !important;
+        border: 1px solid var(--accent-color-alt) !important;
+        color: var(--primary-font-color) !important;
     }
 }
 
@@ -249,6 +257,7 @@ body{
 
 .side-panel{
     overflow: hidden;
+    pointer-events: none;
 }
 
 .screen-overlay

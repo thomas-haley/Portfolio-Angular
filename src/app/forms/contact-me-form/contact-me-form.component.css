@@ -1,0 +1,79 @@
+
+.contact-form-container{
+    display: flex;
+    
+    
+    margin: 8px 0px;
+    font-size: 18px;
+}
+
+.contact-form-row{
+    min-width: 30vw;
+    max-width: 70vw;
+    justify-content: space-between;
+}
+
+.fill-space{
+    /* width: 90%; */
+    margin-left: 1rem;
+}
+
+.spacer{
+    width: auto;
+}
+
+
+.input-form-field{
+    min-width: 65%;
+    background-color: var(--primary-background);
+    border: solid 1px var(--primary-color);
+    padding: 4px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: var(--primary-font-color);
+}
+
+.input-form-field::placeholder{
+    color: var(--placeholder-text-color);
+}
+
+.form-text-area-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.form-text-area-container label{
+    margin-bottom: 8px;
+    width: 100%
+    
+}
+
+#inquiry-comments{
+    resize: none;
+    height: 150px;
+    background-color: var(--primary-background);
+    color: var(--primary-font-color);
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.form-submit-button{
+    font-size: 16px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.hint-row-container{
+    visibility: hidden;
+}
+
+.show-hint{
+    visibility: visible;
+}

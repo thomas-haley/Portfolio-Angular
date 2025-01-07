@@ -1,0 +1,7 @@
+.hint-row{
+    width: 100%;
+    color: var(--warning-color);
+    margin-left: 36%; 
+    font-size: 12px;
+}
+

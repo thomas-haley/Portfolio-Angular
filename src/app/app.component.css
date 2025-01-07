@@ -18,6 +18,10 @@ app-light-dark-selector
     margin-right: 1vw;
 }
 
+contact-me{
+    height: inherit;
+}
+
 .navbar
 {
     position: fixed;
@@ -27,6 +31,12 @@ app-light-dark-selector
     height: 5%;
     
     z-index: 20;
+}
+
+.router-out{
+    width: 100%;
+    height: 95%;
+    top: 5%;
 }
 
 .navbar-collapse
