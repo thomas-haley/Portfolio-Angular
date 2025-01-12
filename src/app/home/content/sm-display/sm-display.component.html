@@ -1,0 +1,18 @@
+<a href="{{socialLink}}" class="social-link-anchor" target="_blank">
+    <!-- <app-glass-card [altBG]="true" [contentPadding]=".5"> -->
+
+        <div class="flex flex-column  social-link-container card-ds" style="padding: {{containerPadding}}px">
+            <div class="w-100 flex j-center">
+                <i class="bi-{{bsSocialIcon}} social-icon" style="font-size: {{iconFont}}px"></i>
+            </div>
+            @if (includeDescription) {
+                <div class="flex j-center text-center sm-description-container">
+                    <h1 class="">
+    
+                        <ng-content></ng-content>
+                    </h1>
+                </div>
+            }
+        </div>
+    <!-- </app-glass-card> -->
+</a>

@@ -3,9 +3,10 @@
 :root{
     --glass-transparancy-factor: .7;
     --primary-background: rgb(163, 163, 189);
-    --primary-color: #43466c;
+    --primary-color: rgb(66, 69, 107);
+    --primary-color-trans:rgba(66, 69, 107, var(--glass-transparancy-factor));
     --primary-color-alt: #c7c8d3;
-    --accent-color:#637671;
+    --accent-color:rgb(99, 118, 113);
     --accent-color-alt:rgb(208, 214, 212);
     --accent-color-alt-trans:rgba(208, 214, 212, var(--glass-transparancy-factor));
     --warning-color:#fd3d3d;
@@ -98,6 +99,10 @@ app-contact-me, app-home{
 .flex
 {
     display: flex;
+}
+
+.flex-column{
+    flex-direction: column;
 }
 
 .button
@@ -276,4 +281,12 @@ body{
 .screen-overlay-active{
     background-color: rgba(0, 0, 0, .5);
     /* pointer-events: inherit !important; */
+}
+
+.debug-bg{
+    background-color: red !important;
+}
+
+.card-ds{
+    box-shadow: 0px 7px 14px -9px black;
 }

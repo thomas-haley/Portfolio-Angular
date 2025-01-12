@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavLinkComponent } from './nav-link.component';
+import { SmDisplayComponent } from './sm-display.component';
 
-describe('NavLinkComponent', () => {
-  let component: NavLinkComponent;
-  let fixture: ComponentFixture<NavLinkComponent>;
+describe('SmDisplayComponent', () => {
+  let component: SmDisplayComponent;
+  let fixture: ComponentFixture<SmDisplayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavLinkComponent]
+      imports: [SmDisplayComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NavLinkComponent);
+    fixture = TestBed.createComponent(SmDisplayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

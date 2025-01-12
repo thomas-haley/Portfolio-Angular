@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-glass-card',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './glass-card.component.css'
 })
 export class GlassCardComponent {
-
+  @Input() altBG: boolean = false;
+  @Input() contentPadding: number = 2;
 }

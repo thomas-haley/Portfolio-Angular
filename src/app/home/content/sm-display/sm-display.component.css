@@ -1,0 +1,21 @@
+.sm-description-container{
+    color: white;
+    text-decoration: none;
+}
+
+.social-link-anchor{
+    text-decoration: none;
+    display: flex;
+    margin: 24px 12px;
+}
+
+.social-link-container{
+    background-color: var(--primary-color-trans);
+    border-radius: 10px;
+    
+    width: fit-content;
+}
+
+.social-icon{
+    color: white;
+}
