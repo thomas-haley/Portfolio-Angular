@@ -4,7 +4,7 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: var(--primary-color-alt);
+    
 }
 
 .end-cont{
@@ -18,4 +18,11 @@ app-nav-link
     justify-content: center;
     align-items: center;
     /* padding: 15px 8px; */
+}
+
+.nav-login-cont{
+    max-width: 33%;
+    position: relative;
+    right: 10px;
+    top: 10px;
 }

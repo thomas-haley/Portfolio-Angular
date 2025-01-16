@@ -1,4 +1,4 @@
-@if(this.config() != null)
+<!-- @if(this.config() != null)
 {
 
     @for(card of this.config()!['content_containers'][listTag]; track $index)
@@ -10,4 +10,18 @@
     }
 
     
+} -->
+
+@if(this.content() != null)
+{
+    @if(this.content()!.content != null)
+    {
+        @for(content of this.content()!.content; track $index)
+        {
+            @if(content.visible)
+            {
+                <app-media-caption-card [cardData]="content"></app-media-caption-card>
+            }
+        }
+    }
 }

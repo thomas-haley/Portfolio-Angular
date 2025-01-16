@@ -12,7 +12,8 @@ export class ComponentConfigLoaderService {
 
   loadConfig(configFile: string): Observable<ComponentConfig>
   {
-    return this.http.get<ComponentConfig>(this.configBasePath + configFile)
+    return this.http.get<ComponentConfig>(this.configBasePath + configFile);
+
   }
 
 }

@@ -1,0 +1,8 @@
+@if(accountService.currentUser() != null){
+    <button (click)="this.accountService.logout()">Sign out</button>
+
+
+} @else {
+    <app-login-form></app-login-form>
+
+}
