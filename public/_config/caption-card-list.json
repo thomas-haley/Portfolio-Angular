@@ -1,0 +1,48 @@
+{
+    "/": {
+        "visible": true,
+        "content_containers": {
+            "1": [
+                {   
+                    "visible": true,
+                    "title": "This Site",
+                    "description": "Welcome! I'm currently developing a custom Content Management System (CMS) to deliver a more dynamic and tailored experience. New content and features are on the way, so be sure to check back soon for updates! You can contact me at thomas.haley.2018@gmail.com with any questions or comments.",
+                    "media": "",
+                    "mediaLeft": true
+    
+                }
+            ]
+        }
+        
+    },
+    "/projects": {
+        "visible": true,
+        "content_containers": {
+            "2": [
+                    {   
+                        "visible": true,
+                        "title": "Projects Page",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales ante justo, id euismod nunc pulvinar sit amet. Morbi imperdiet varius eros id convallis. Aliquam eget varius felis. Phasellus vulputate gravida libero, vel hendrerit sem blandit in. Sed non leo enim. Nam ut erat finibus, tincidunt ante sed, fermentum urna. Fusce nec lectus ut nunc mattis feugiat vitae condimentum sapien. Phasellus interdum scelerisque dictum. Morbi eu urna in risus vulputate fringilla sed sit amet nulla. Donec pulvinar ipsum nec ipsum blandit, id porttitor est interdum. Ut ornare congue leo quis facilisis. Nullam quis viverra ipsum, nec sollicitudin nisl.",
+                        "media": "placeholder.png",
+                        "mediaLeft": true
+                    }
+                ]
+        }
+        
+    },
+    "/contact": {
+        "visible": true,
+        "content_containers": {
+            "3": [
+                    {   
+                        "visible": true,
+                        "title": "Contact Page",
+                        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sodales ante justo, id euismod nunc pulvinar sit amet. Morbi imperdiet varius eros id convallis. Aliquam eget varius felis. Phasellus vulputate gravida libero, vel hendrerit sem blandit in. Sed non leo enim. Nam ut erat finibus, tincidunt ante sed, fermentum urna. Fusce nec lectus ut nunc mattis feugiat vitae condimentum sapien. Phasellus interdum scelerisque dictum. Morbi eu urna in risus vulputate fringilla sed sit amet nulla. Donec pulvinar ipsum nec ipsum blandit, id porttitor est interdum. Ut ornare congue leo quis facilisis. Nullam quis viverra ipsum, nec sollicitudin nisl.",
+                        "media": "placeholder.png",
+                        "mediaLeft": true
+                    }
+                ]
+        }
+        
+    }
+}

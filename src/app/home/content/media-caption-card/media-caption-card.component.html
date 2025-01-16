@@ -1,6 +1,6 @@
 <div class="media-card-container card-ds {{!mediaLeft ? 'mobile-flex-start' : ''}}" >
 
-    @if(this.cardData.mediaLeft)
+    @if(this.cardData.mediaLeft && this.cardData.media != "")
     {
         <div class="media-container media-center">
             @if(this.cardData.media)
@@ -13,10 +13,10 @@
         </div>
     }
 
-    <div class="content-container p-8">
+    <div class="content-container p-8 {{this.cardData.media == '' ? 'full-width' : ''}}">
         <div class="media-card-text-container">
             <div class="title-container {{!mediaLeft ? 'just-end' : ''}}" >
-                <h1>{{this.cardData.title!}}</h1>
+                <h1 class="card-title">{{this.cardData.title!}}</h1>
             </div>
             <div class="description-container">
                 <p>{{this.cardData.description}}</p>
@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    @if(!this.cardData.mediaLeft)
+    @if(!this.cardData.mediaLeft && this.cardData.media != "")
     {
         <div class="media-container media-center">
             @if(this.cardData.media)
