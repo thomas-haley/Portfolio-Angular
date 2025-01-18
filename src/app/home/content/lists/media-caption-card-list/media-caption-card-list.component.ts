@@ -8,19 +8,23 @@ import { MediaCaptionCardComponent } from '../../media-caption-card/media-captio
 import { Router } from '@angular/router';
 import { ComponentListLoaderService } from '../../../../_services/content-list-loader.service';
 import { ContentListData } from '../../../../_models/content-list-data';
+import { AccountService } from '../../../../_services/account.service';
+import { ListContentEditComponent } from "../../../admin/lists/list-content-edit/list-content-edit.component";
 
 @Component({
   selector: 'app-media-caption-card-list',
   standalone: true,
   imports: [
-    MediaCaptionCardComponent
-  ],
+    MediaCaptionCardComponent,
+    ListContentEditComponent
+],
   templateUrl: './media-caption-card-list.component.html',
   styleUrl: './media-caption-card-list.component.css'
 })
 export class MediaCaptionCardListComponent {
   @Input() listTag: string = '';
   private configLoader = inject(ComponentConfigLoaderService);
+  accountService = inject(AccountService);
   apiContentLoader = inject(ComponentListLoaderService);
   config = signal<GenericConfig|null>(null);
   content = signal<ContentListData|null>(null);
