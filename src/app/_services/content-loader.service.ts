@@ -35,18 +35,14 @@ export class ContentLoaderService {
   getPossibleContent(): Observable<ContentData[]>
   {
     var contentData: ContentData[] = [];
-    console.log("123");
     return this.http.get<ContentData[]>(environment.apiUrl + "content").pipe(
         map(response => {
-            console.log(response)
-            console.log("123");
             for(var content of response){
                 contentData.push(this.parseContentData(content));
             }
             return contentData;
         })
     );
-    // return contentData;
   }
 
 }
