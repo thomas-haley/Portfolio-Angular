@@ -23,19 +23,6 @@
 }
 
 
-.input-form-field{
-    min-width: 65%;
-    background-color: var(--primary-background);
-    border: solid 1px var(--primary-color);
-    padding: 4px;
-    border-radius: 8px;
-    font-size: 18px;
-    color: var(--primary-font-color);
-}
-
-.input-form-field::placeholder{
-    color: var(--placeholder-text-color);
-}
 
 .form-text-area-container{
     display: flex;
@@ -60,15 +47,7 @@
     font-size: 14px;
 }
 
-.form-submit-button{
-    font-size: 16px;
-    background-color: var(--primary-color);
-    border: 1px solid var(--primary-color);
-    color: white;
-    padding: 8px;
-    border-radius: 8px;
-    cursor: pointer;
-}
+
 
 .hint-row-container{
     visibility: hidden;

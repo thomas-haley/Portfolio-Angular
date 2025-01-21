@@ -7,6 +7,7 @@ import {FormControl, ReactiveFormsModule, Validators} from '@angular/forms';
 import { FormHintRowComponent } from "../form-hint-row/form-hint-row.component";
 import { ContactInquiryService } from '../../_services/contact-inquiry.service';
 import { ContactInquiry } from '../../_models/contact-inquiry';
+import { CustomToastrService } from '../../_services/custom-toastr.service';
 @Component({
   selector: 'app-contact-me-form',
   standalone: true,
@@ -17,6 +18,7 @@ import { ContactInquiry } from '../../_models/contact-inquiry';
 export class ContactMeFormComponent extends JsonFormComponent{
 
   contactService = inject(ContactInquiryService);
+  toaster = inject(CustomToastrService);
   nameControl = new FormControl('', [Validators.required, this.validateText()]);
   
   emailControl = new FormControl('', [Validators.required, this.validateText()]);
@@ -26,11 +28,7 @@ export class ContactMeFormComponent extends JsonFormComponent{
   supressHints = true;
   private http = inject(ComponentConfigLoaderService)
   x = signal<JsonFormPayload|null>(null);
-  ngOnInit(){
-    console.log("Contact me initialized");
-    // this.test();
-    // this.nameControl.
-  }
+
 
   validateInput(): boolean{
     let result = true;
@@ -48,10 +46,11 @@ export class ContactMeFormComponent extends JsonFormComponent{
 
 
 
+
   submitContactMe(){
-    console.log("Validating");
     this.supressHints = false;
     if(!this.validateInput()){
+      this.toaster.showError("Error validating input, please see form for more details.");
       return;
     }
 
@@ -65,11 +64,12 @@ export class ContactMeFormComponent extends JsonFormComponent{
     this.contactService.createInquiry(inqData).subscribe(res => {
 
       //TODO: Show toaster, clear form
-      console.log("TODO: Show toaster here")
-      console.log(res.message);
+      // console.log("TODO: Show toaster here")
+      // console.log(res.message);
     });
 
-
+    this.toaster.showSuccess("Inquiry sent. Thank you for your feedback!");
+    this.resetForm();
     // let object = {
     //   "contentTag": this.formTag,
     //   "formType": "contact-form",
@@ -102,5 +102,15 @@ export class ContactMeFormComponent extends JsonFormComponent{
 
     // this.supressHints = true;
     // console.log(this.payload);
+  }
+
+
+
+  resetForm(){
+    this.supressHints = true;
+    this.nameControl.reset();
+    this.emailControl.reset();
+    this.typeControl.reset("general");
+    this.commentControl.reset();
   }
 }

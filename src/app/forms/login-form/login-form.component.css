@@ -9,3 +9,14 @@
     /* justify-content: center; */
     /* align-items: center; */
 }
+
+
+.login-form-cont{
+    display: flex;
+}
+
+
+.form-submit-button-cont{
+    display: flex;
+    justify-content: end;
+}
