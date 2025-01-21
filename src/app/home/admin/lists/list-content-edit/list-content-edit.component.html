@@ -1,0 +1,36 @@
+<div
+style="
+display: grid;
+grid-template-columns: 1fr 1fr;
+position: relative;
+background-color: red;
+margin-top: 1em;
+z-index: 25;
+">
+    <div
+    style="display: flex;
+    justify-content: start;">
+        <select>
+            <option value="{{-1}}">Select content</option>
+            @for(content of this.currentContentOptions(); track $index){
+                <option value="{{content.id}}">{{content.title}}</option>
+            }
+        </select>
+        <button>Edit</button>
+        <button>Remove</button>
+
+    </div>
+    <div style="
+    display: flex;
+    justify-content: end;
+    ">
+
+        <select>
+            <option value="{{-1}}">Add New Content</option>
+            @for(content of this.addContentOptions(); track $index){
+                <option value="{{content.id}}">{{content.id}} - {{content.title}}</option>
+            }
+        </select>
+        <button (click)="openDialog()">Add</button>
+    </div>
+</div>

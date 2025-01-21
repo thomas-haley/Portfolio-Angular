@@ -16,6 +16,6 @@ export class NavLinkComponent {
 
   activeRoute(): boolean
   {
-    return this.router.url == this.linkURL;
+    return this.router.url.replace("/", "") == this.linkURL;
   }
 }

@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { StaticMediaComponent } from '../static-media/static-media.component';
 import { MediaCaptionCardConfig } from '../../../_models/media-caption-card-config';
+import { ContentData } from '../../../_models/content-data';
 
 @Component({
   selector: 'app-media-caption-card',
@@ -10,10 +11,11 @@ import { MediaCaptionCardConfig } from '../../../_models/media-caption-card-conf
   styleUrl: './media-caption-card.component.css'
 })
 export class MediaCaptionCardComponent {
-  @Input() cardData! : MediaCaptionCardConfig;
+  @Input() cardData!: ContentData;
+  // @Input() cardData! : MediaCaptionCardConfig;
 
-  @Input() mediaLeft : boolean = true;
-  @Input() media : string|null = null;
-  @Input() title : string|null = null;
-  @Input() description : string|null = null;
+  // @Input() mediaLeft : boolean = true;
+  // @Input() media : string|null = null;
+  // @Input() title : string|null = null;
+  // @Input() description : string|null = null;
 }

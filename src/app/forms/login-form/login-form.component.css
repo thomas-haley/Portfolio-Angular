@@ -1,0 +1,22 @@
+.login-form{
+    display: grid;
+    width: 100%;
+    /* grid-auto-columns: max-content; */
+    /* grid-template-columns: repeat(auto-fit, minmax(100px, 222px)); */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%/3, max(64px, 100%/5)), 14rem));
+    grid-gap: 10px;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+
+.login-form-cont{
+    display: flex;
+}
+
+
+.form-submit-button-cont{
+    display: flex;
+    justify-content: end;
+}

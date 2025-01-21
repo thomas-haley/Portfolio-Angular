@@ -47,7 +47,7 @@ app-contact-me, app-home{
     }
 
     .nav-cont{
-        background-color: var(--primary-color);
+        background-color: var(--primary-color-alt);
     }
     .form-submit-button{
         background-color: var(--accent-color) !important;
@@ -56,7 +56,15 @@ app-contact-me, app-home{
     }
 }
 
-
+.form-submit-button{
+    font-size: 16px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
 
 
 
@@ -170,6 +178,7 @@ app-contact-me, app-home{
 
 
 body{
+    height: 100vh;
     background-color: var(--primary-background);
     color: var(--primary-font-color);
     margin: 0px;
@@ -289,4 +298,73 @@ body{
 
 .card-ds{
     box-shadow: 0px 7px 14px -9px black;
+}
+
+.text-input-field-md{
+    max-width: 22rem;
+    font-size: 18px;
+    width: fit-content;
+    margin: 0px 2px;
+}
+
+.form-submit-btn-md{
+    max-width: 22rem;
+    width: fit-content;
+    height: 100%;
+    padding: .3em;
+    align-self: center;
+}
+
+.cdk-overlay-container{
+    position: relative;
+    z-index: 15;
+}
+
+.cdk-overlay-backdrop{
+    z-index: 25;
+}
+
+.cdk-global-overlay-wrapper{
+    height: 100vh;
+    width: 100vw;
+    /* position: fixed; */
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-color-trans);
+}
+
+/* .overlay-container{
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+} */
+
+
+.central-content-container
+{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.input-form-field{
+    min-width: 65%;
+    background-color: var(--primary-background);
+    border: solid 1px var(--primary-color);
+    padding: 4px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: var(--primary-font-color);
+}
+
+.input-form-field::placeholder{
+    color: var(--placeholder-text-color);
 }

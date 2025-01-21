@@ -1,6 +1,6 @@
-<div class="media-card-container card-ds {{!mediaLeft ? 'mobile-flex-start' : ''}}" >
-
-    @if(this.cardData.mediaLeft && this.cardData.media != "")
+<div class="media-card-container card-ds {{this.cardData.mediaPosition == 'left' ? 'mobile-flex-start' : ''}}" >
+    
+    @if(this.cardData.mediaPosition == "left" && this.cardData.media != "")
     {
         <div class="media-container media-center">
             @if(this.cardData.media)
@@ -15,7 +15,7 @@
 
     <div class="content-container p-8 {{this.cardData.media == '' ? 'full-width' : ''}}">
         <div class="media-card-text-container">
-            <div class="title-container {{!mediaLeft ? 'just-end' : ''}}" >
+            <div class="title-container {{this.cardData.mediaPosition != 'left' ? 'just-end' : ''}}" >
                 <h1 class="card-title">{{this.cardData.title!}}</h1>
             </div>
             <div class="description-container">
@@ -24,9 +24,9 @@
         </div>
     </div>
 
-    @if(!this.cardData.mediaLeft && this.cardData.media != "")
+    @if(this.cardData.mediaPosition == "right" && this.cardData.media != "")
     {
-        <div class="media-container media-center">
+        <div class="media-container media-center"> 
             @if(this.cardData.media)
             {
                 <!-- Handle static media -->

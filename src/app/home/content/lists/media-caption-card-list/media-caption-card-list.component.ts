@@ -6,21 +6,28 @@ import { GenericConfig } from '../../../../_models/generic-config';
 import { ComponentConfig } from '../../../../_models/component-config';
 import { MediaCaptionCardComponent } from '../../media-caption-card/media-caption-card.component';
 import { Router } from '@angular/router';
+import { ComponentListLoaderService } from '../../../../_services/content-list-loader.service';
+import { ContentListData } from '../../../../_models/content-list-data';
+import { AccountService } from '../../../../_services/account.service';
+import { ListContentEditComponent } from "../../../admin/lists/list-content-edit/list-content-edit.component";
 
 @Component({
   selector: 'app-media-caption-card-list',
   standalone: true,
   imports: [
-    MediaCaptionCardComponent
-  ],
+    MediaCaptionCardComponent,
+    ListContentEditComponent
+],
   templateUrl: './media-caption-card-list.component.html',
   styleUrl: './media-caption-card-list.component.css'
 })
 export class MediaCaptionCardListComponent {
   @Input() listTag: string = '';
   private configLoader = inject(ComponentConfigLoaderService);
+  accountService = inject(AccountService);
+  apiContentLoader = inject(ComponentListLoaderService);
   config = signal<GenericConfig|null>(null);
-
+  content = signal<ContentListData|null>(null);
   constructor(private router: Router) {}
 
   ngOnInit()
@@ -30,6 +37,16 @@ export class MediaCaptionCardListComponent {
         this.config.set(response[this.router.url]);
         // this.config.set(response);
     })
+
+    this.apiContentLoader.loadListContent(this.listTag).subscribe((response) => {
+      this.content.set(response);
+    })
+
+
+  }
+
+  test(){
+    console.log(this.content());
   }
 
   mapCardListListConfig()
