@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://thomashaley.app/api'
+    apiUrl: 'https://portfolio.thomashaley.app/api/'
 };
 
 
