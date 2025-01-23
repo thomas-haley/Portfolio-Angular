@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    apiUrl: 'https://portfolio.thomashaley.app/api/'
+    apiUrl: 'http://localhost/api/'
 };
 
 
