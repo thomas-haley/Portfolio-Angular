@@ -1,0 +1,18 @@
+<div #modalConf class="conf-modal">
+    <div >
+        @if(this.confTitle()){
+            <h2 class="text-center form-row" >{{this.confTitle()}}</h2>
+        }
+        @if(this.confText()){
+            <div class="d-flex description-cont">
+                <p class="form-row">{{this.confText()}}</p>
+            </div>
+        }
+    </div>
+
+    <div mat-dialog-actions class="d-flex j-space-between">
+        <button mat-button (click)="cancelClick()"  class="form-submit-button" cdkFocusInitial>Cancel</button>
+        <button mat-button  (click)="confirmClick()" class="form-submit-button" cdkFocusInitial>Confirm</button>
+    </div>
+
+</div>

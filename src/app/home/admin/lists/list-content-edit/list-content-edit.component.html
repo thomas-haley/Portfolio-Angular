@@ -10,14 +10,18 @@ z-index: 25;
     <div
     style="display: flex;
     justify-content: start;">
-        <select>
-            <option value="{{-1}}">Select content</option>
+        <select name="current-content" [(ngModel)]="selectedCurrentContent">
+            <option value="{{-1}}">Create new content</option>
             @for(content of this.currentContentOptions(); track $index){
                 <option value="{{content.id}}">{{content.title}}</option>
             }
         </select>
-        <button>Edit</button>
-        <button>Remove</button>
+        @if(this.selectedCurrentContent == "-1"){
+            <button (click)="handleCreateClick()">Create</button>
+        } @else {
+            <button (click)="handleEditClick()">Edit</button>
+            <button (click)="removeContent()">Remove</button>
+        }
 
     </div>
     <div style="
@@ -31,6 +35,6 @@ z-index: 25;
                 <option value="{{content.id}}">{{content.id}} - {{content.title}}</option>
             }
         </select>
-        <button (click)="openDialog()">Add</button>
+        <button (click)="openDialog('new', null)">Add</button>
     </div>
 </div>

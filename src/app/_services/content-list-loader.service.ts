@@ -19,6 +19,11 @@ export class ComponentListLoaderService {
     );
   }
 
+  removeListContent()
+  {
+    
+  }
+
   private parseContentListData(data: any): ContentListData {
     // Ensure the structure of ContentListData
     return {

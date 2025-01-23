@@ -66,6 +66,19 @@ app-contact-me, app-home{
     cursor: pointer;
 }
 
+.form-cancel-button{
+    font-size: 16px;
+    background-color: var(--warning-color);
+    border: 1px solid var(--primary-color);
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.text-center{
+    text-align: center;
+}
 
 
 .primary-bg
@@ -104,9 +117,33 @@ app-contact-me, app-home{
     margin: 0rem 1em;
 }
 
-.flex
+.flex, .d-flex
 {
     display: flex;
+}
+
+.d-grid{
+    display: grid;
+}
+
+.grid-2-c{
+    grid-template-columns: 1fr 1fr;
+}
+
+.j-space-between{
+    justify-content: space-between;
+}
+
+.a-center{
+    align-items: center;
+}
+
+.w-fit{
+    width: fit-content;
+}
+
+.form-row{
+    margin: 8px 0px;
 }
 
 .flex-column{
@@ -117,6 +154,10 @@ app-contact-me, app-home{
 {
     cursor: pointer;
 }
+
+
+
+
 
 @media only screen and (max-width: 720px){
     :root{
@@ -367,4 +408,8 @@ body{
 
 .input-form-field::placeholder{
     color: var(--placeholder-text-color);
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+    background-color: unset !important;
 }
