@@ -1,0 +1,11 @@
+.conf-modal{
+    margin: 16px;
+    width: 20vw;
+}
+
+.description-cont{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 8vh;
+}

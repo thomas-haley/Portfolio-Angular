@@ -16,7 +16,7 @@
 {
     <!-- Settings to be able to add/remove content -->
     @if(this.accountService.currentUser()){
-        <app-list-content-edit [listTag]="listTag"></app-list-content-edit>
+        <app-list-content-edit [listTag]="listTag" (onContentChange)="loadContent()"></app-list-content-edit>
     }
     @if(this.content()!.content != null)
     {

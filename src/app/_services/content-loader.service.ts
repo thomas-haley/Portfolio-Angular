@@ -19,6 +19,17 @@ export class ContentLoaderService {
     );
   }
 
+  patchContent(data: ContentData): Observable<boolean>{
+    return this.http.patch<boolean>(environment.apiUrl + "content/" + data.id, data)
+  }
+
+  putContent(data: ContentData): Observable<boolean>{
+    return this.http.put<boolean>(environment.apiUrl + "content/create", data);
+  }
+
+
+
+
   private parseContentData(data: any): ContentData {
     // Ensure the structure of ContentData
     return {

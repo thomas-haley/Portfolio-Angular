@@ -1,16 +1,47 @@
 
 
-<div #modalContent>
-    <h1 mat-dialog-title>Content</h1>
-    <div mat-dialog-content>
-    <p>Content Title</p>
-    <!-- <mat-form-field> -->
-        <!-- <input matInput [(ngModel)]="data.animal"> -->
-    <!-- </mat-form-field> -->
+<div #modalContent class="content-modal">
+    <div class="d-flex j-space-between">
+        <h2>
+            @if(this.listMode() == "edit"){
+                Content ID #{{this.contentIn()?.id}}
+            }
+        </h2>
+        <div class="d-flex a-center">
+            <label for="vis-input">Visible</label>
+            <input name="vis-input" type="checkbox" [(ngModel)]="this.contentOut!.visible">
+        </div>
     </div>
-    <div mat-dialog-actions>
-    <!-- <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button> -->
+    <div class="d-flex flex-column form-row">
+        <label for="title-input">Title:</label>
+        <input name="title-input" class="input-form-field" [(ngModel)]="this.contentOut!.title">
+    </div>
+
+    <div class="d-flex flex-column form-row">
+        <label for="desc-input">Description:</label>
+        <textarea name="desc-input" class="input-form-field textarea-input" [(ngModel)]="this.contentOut!.description"></textarea>
+    </div>
+
+    <div class="d-flex j-space-between form-row">
+        <div class="d-flex a-center">
+            <label for="media-url">Media Url:</label>
+            <input name="media-url" class="input-form-field" [(ngModel)]="this.contentOut!.media">
+        </div>
+        <div class="d-grid grid-2-c a-center">
+            <label for="media-pos">Position:</label>
+            <select [(ngModel)]="this.contentOut!.mediaPosition" class="input-form-field form-control">
+                <option value="left">Left</option>
+                <option value="right">Right</option>
+            </select>
+        </div>
+    </div>
+    <div mat-dialog-actions class="d-flex j-space-between">
+        <button mat-button (click)="this.dialogRef.close()" class="form-cancel-button">Cancel</button>
+        @if(this.listMode() == "edit"){
+                <button mat-button (click)="editSubmit()" class="form-submit-button" cdkFocusInitial>Save</button>
+        } @else {
+                <button mat-button (click)="createSubmit()" class="form-submit-button" cdkFocusInitial>Create</button>
+        }
     </div>
 
 

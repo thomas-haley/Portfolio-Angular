@@ -32,18 +32,20 @@ export class MediaCaptionCardListComponent {
 
   ngOnInit()
   { 
-    // this.config = this.configLoader.loadConfig('caption-card-list.json').subscribe(response => console.log(response))
       this.configLoader.loadConfig('caption-card-list.json').subscribe((response) => {
         this.config.set(response[this.router.url]);
-        // this.config.set(response);
-    })
 
+    })
+    this.loadContent();
+  }
+
+
+  loadContent(){
     this.apiContentLoader.loadListContent(this.listTag).subscribe((response) => {
       this.content.set(response);
     })
-
-
   }
+
 
   test(){
     console.log(this.content());
