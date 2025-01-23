@@ -23,8 +23,8 @@ export class ContentLoaderService {
     return this.http.patch<boolean>(environment.apiUrl + "content/" + data.id, data)
   }
 
-  putContent(data: ContentData): Observable<boolean>{
-    return this.http.put<boolean>(environment.apiUrl + "content/create", data);
+  putContent(data: ContentData): Observable<ContentData>{
+    return this.http.put<ContentData>(environment.apiUrl + "content/create", data);
   }
 
 

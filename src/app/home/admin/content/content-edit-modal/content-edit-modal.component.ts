@@ -46,9 +46,10 @@ export class ContentEditModalComponent {
 
   async createSubmit(){
     this.contentService.putContent(this.contentOut!).subscribe((response)=> {
-      if(response){
+      console.log(response);
+      if(response != null){
         this.toaster.showSuccess("Content created successfully.");
-        this.dialogRef.close({event:"should-update"});
+        this.dialogRef.close({event:"should-update", contentID: response.id});
       } else {
         this.toaster.showError("Unable to create content");
       }
