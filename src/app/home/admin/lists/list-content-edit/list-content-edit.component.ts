@@ -25,10 +25,7 @@ export class ListContentEditComponent {
   addContentOptions = signal<ContentData[]|null>(null);
   currentContentOptions = signal<ContentData[]|null>(null);
   selectedCurrentContent: string = "-1"; 
-  selectedAddDD: ContentDropdown = {
-    id: -1,
-    title: ""
-  };
+  selectedBindContent: string = "-1";
   ngOnInit(){
     this.updateContentLists();
   }
@@ -49,6 +46,9 @@ export class ListContentEditComponent {
     this.contentListLoader.loadListContent(this.listTag).subscribe(contentListData => {
       this.currentContentOptions.set(contentListData.content);
     })
+
+    this.selectedCurrentContent = "-1";
+    this.selectedBindContent = "-1";
   }
 
   handleCreateClick(){
@@ -63,10 +63,30 @@ export class ListContentEditComponent {
     },
     panelClass: "primary-color-bg"
     });
-    dialogRef.afterClosed().subscribe(result => {
-      if(result && result.event == "should-update"){
+    dialogRef.afterClosed().subscribe(createResult => {
+
+      if(mode == "create" && createResult && createResult.event == "should-update" && createResult.contentID != null){
+        const confDialogRef = this.dialog.open(ConfirmationModalComponent, {panelClass: "primary-color-bg", data: 
+          {
+          title:"Bind new content to list?", 
+          text: `New content has been created. Would you like to bind it to the current list?`
+        }})
+
+        confDialogRef.afterClosed().subscribe(result => {
+          if(result.event == "confirm"){
+            this.contentListLoader.addListContent(this.listTag, createResult.contentID).subscribe(result => {
+              this.updateContentLists();
+              this.onContentChange.emit();
+            });
+
+          }
+        })
+
+
+      } else if(createResult && createResult.event == "should-update") {
         this.updateContentLists();
         this.onContentChange.emit();
+
       }
     })
   }
@@ -77,15 +97,41 @@ export class ListContentEditComponent {
       return;
     }
 
-    const dialogRef = this.dialog.open(ConfirmationModalComponent, {data: {title:"Test Conf", text:"Test Desc"}});
+    const dialogRef = this.dialog.open(ConfirmationModalComponent, {panelClass: "primary-color-bg", data: {title:"Confirm delete content from list?", text: `Are you sure you want to remove Content ID #${this.selectedCurrentContent} from list with tag: ${this.listTag}?`}});
     dialogRef.afterClosed().subscribe(result => {
       if(result && result.event == "confirm"){
-        //Actually remove here
-        this.toaster.showSuccess("Content removed successfully");
+        this.contentListLoader.removeListContent(this.listTag, Number.parseInt(this.selectedCurrentContent)).subscribe(
+          (result) => {
+            this.toaster.showSuccess("Content removed successfully");
+            this.updateContentLists();
+            this.onContentChange.emit();
+          }
+        );
+        
       } else {
         this.toaster.showMessage("Content not removed");
       }
 
     })
   }
+
+  bindNewContent(){
+    if(this.selectedBindContent == "-1"){
+        this.toaster.showError("Select new content to add");
+    }
+
+    this.contentListLoader.addListContent(this.listTag, Number.parseInt(this.selectedBindContent)).subscribe((response) => {
+      if(response){
+        this.toaster.showSuccess("Content bound");
+        this.updateContentLists();
+        this.onContentChange.emit();
+      } else {
+        this.toaster.showError("Error binding content to list on server.");
+      }
+    })
+    console.log(this.selectedBindContent);
+  }
+
+
+
 }

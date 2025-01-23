@@ -1,40 +1,37 @@
 <div
-style="
-display: grid;
-grid-template-columns: 1fr 1fr;
-position: relative;
-background-color: red;
-margin-top: 1em;
-z-index: 25;
-">
+class="d-grid grid-2-c glass-card list-banner"
+>
     <div
-    style="display: flex;
-    justify-content: start;">
-        <select name="current-content" [(ngModel)]="selectedCurrentContent">
-            <option value="{{-1}}">Create new content</option>
-            @for(content of this.currentContentOptions(); track $index){
-                <option value="{{content.id}}">{{content.title}}</option>
+    class="edit-action-cont left-cont"
+    >
+        <div>
+            <select class="input-form-field" name="current-content" [(ngModel)]="selectedCurrentContent">
+                <option value="{{-1}}">Create new content</option>
+                @for(content of this.currentContentOptions(); track $index){
+                    <option value="{{content.id}}">{{content.title}}</option>
+                }
+            </select>
+        </div>
+        <div>
+            @if(this.selectedCurrentContent == "-1"){
+                <button class="form-submit-button" (click)="handleCreateClick()">Create</button>
+            } @else {
+                <button class="form-submit-button" (click)="handleEditClick()">Edit</button>
+                <button class="form-submit-button" (click)="removeContent()">Remove</button>
             }
-        </select>
-        @if(this.selectedCurrentContent == "-1"){
-            <button (click)="handleCreateClick()">Create</button>
-        } @else {
-            <button (click)="handleEditClick()">Edit</button>
-            <button (click)="removeContent()">Remove</button>
-        }
+        </div>
 
     </div>
-    <div style="
-    display: flex;
-    justify-content: end;
-    ">
+    <div 
+    class="edit-action-cont right-cont"
+    >
 
-        <select>
-            <option value="{{-1}}">Add New Content</option>
+        <select class="input-form-field" [(ngModel)]="selectedBindContent">
+            <option value="{{-1}}">Select content to add to list...</option>
             @for(content of this.addContentOptions(); track $index){
                 <option value="{{content.id}}">{{content.id}} - {{content.title}}</option>
             }
         </select>
-        <button (click)="openDialog('new', null)">Add</button>
+        <button class="form-submit-button" (click)="bindNewContent()">Add</button>
     </div>
 </div>

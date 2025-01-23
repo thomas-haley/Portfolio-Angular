@@ -19,9 +19,33 @@ export class ComponentListLoaderService {
     );
   }
 
-  removeListContent()
+  removeListContent(listTag:string, contentID: number)
   {
-    
+
+    return this.http.delete(environment.apiUrl + "contentList/content/delete-content", {
+      body: {
+        contentlist: {
+          tag: listTag
+        },
+        content: {
+          id: contentID
+        }
+      }
+      
+    })
+  }
+
+  addListContent(listTag: string, contentID: number, order: number = 0)
+  {
+    return this.http.put(environment.apiUrl + "contentList/content/add-content", {
+      contentlist: {
+        tag: listTag
+      },
+      content: {
+        id: contentID
+      },
+      order: order
+    })
   }
 
   private parseContentListData(data: any): ContentListData {
